@@ -1,0 +1,15 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-nav">
+      <a *ngIf="isLoggedin" class="nav-item nav-link" routerLink="/update/{{currentUser.id}}">Update</a>
+      <a *ngIf="isLoggedin" class="nav-item nav-link" routerLink="/">Home</a>
+      <a *ngIf="isLoggedin" class="nav-item nav-link" (click)="logout()">Logout</a>
+      <a *ngIf="!isLoggedin" class="nav-item nav-link" routerLink="/Login">Login</a>
+      <a *ngIf="!isLoggedin" class="nav-item nav-link" routerLink="/register">Register</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
